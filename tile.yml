@@ -197,15 +197,21 @@ forms:
         select_value: "yes"
         label: "Yes"
         property_blueprints:
+        - name: only_kpi_metrics
+          type: boolean
+          label: Allow Only KPI Metrics
+          default: false
+          description: This will allow only KPI metrics to be ingested
+          configurable: true
         - name: filter_metrics_white_list
           type: string_list
-          label: Metrics White List
+          label: Metrics Allow List
           optional: true
           configurable: true
           description: Comma separated list of glob patterns. Only metrics with names matching the whitelist are reported.
         - name: filter_metrics_black_list
           type: string_list
-          label: Metrics Black List
+          label: Metrics Block List
           optional: true
           configurable: true
           description: Comma separated list of glob patterns. Metrics with names matching the blacklist are dropped.
